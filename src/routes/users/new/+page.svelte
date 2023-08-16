@@ -2,11 +2,21 @@
 	import { PUBLIC_BACKEND_BASE_URL } from '$env/static/public';
 	import { goto } from '$app/navigation';
 	import { authenticateUser } from './../../../utils/auth.js';
+	import { loggedIn } from '../../../store/store.js';
 	let formErrors = {};
 
 	function postSignUp() {
+		loggedIn.update((value) => {
+			return true;
+		});
 		goto('/jobs/new');
 	}
+
+	// async function test() {
+	// 	const resp = await fetch(PUBLIC_BACKEND_BASE_URL + '/api/collections/users/records');
+	// 	const res = await resp.json();
+	// 	console.log(res);
+	// }
 
 	async function createUser(evt) {
 		evt.preventDefault();
@@ -46,6 +56,8 @@
 		}
 	}
 </script>
+
+<!-- <button on:click={test}>testing</button> -->
 
 <h1 class="text-center text-xl">Create an Account to Post a Job</h1>
 <div class="text-center">

@@ -67,12 +67,38 @@ export async function load({ fetch }) {
 // erros is and what is message? cause we didnt intitilaise any of this. at the top, we initialise empty formErrors.
 // answered at the previous q
 
-// part 2
-// note to shaun: make sure to read pocketbase methods and shit
-// first code block
-// 1. go through code at auth.js with comments
+// INSOMNIA AND POCKETBASE
+// insomnia
+// to check if an api is working, or to see data from our api, use insomnia..here, click the small + button on the right which is close to the midle.. dont click the most right one. then do get or post... then put in our api link... must be a proper link..then if post input the field we want to send.. it must follow whats in the body of our api call, and normally is in json..we must also input actuall stuff in.. e.g. cannot use variables.. so "title": "software eng".. also remember must use quotes around it
+
+// pocketbase
+// gives direction as to how we can get data from our backend... we can then take this info and input it into our insomnia to test it out.. the api is given in pocketbase.. thats the main thing you should be looking for.. other shits are abiiiit secondary
+
+// usename - zezmenez
+//password - Bobbybrown7
 
 // steps for shaun to do
-// 1.
-// create variable for login or logout to track
-//make sure it works by linking button to page
+
+// done
+// phase 1
+// I created a store to track if a user is logged in or not. After authentication, the users will get automatically logged in, and when they press log out button, they get logged out. When they are loggedin, they can see job form. When they are logged out, ask them to create account. create account is fine.
+
+//phase 2
+// now, when they are logged out, they now can actually login back.
+
+//phase3
+// now when teyre loggedin, and fill up and sumbit create job form, a job actually gets created and they go to the home page
+
+// phase 4
+// users can choose their job on the homepage, and depending on whether you created it or not, you can edit it. if you didnt create you cannot access the edit page and thus cant edit it.
+
+// phase 5
+// once click edit button, you will be directed to edit page and form is prepopulated. now you can edit it
+
+// challenges
+// phase 5 - once user submit, we cant actually update job, as some issues with our api call - 404 error code
+
+// to-do
+// do alerts!
+// find out how to do alerts for our form
+// in forms, the template form errors is a template so that our requirements gets checked.. requirements are done in the backend.. no need logic

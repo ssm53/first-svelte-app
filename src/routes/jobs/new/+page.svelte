@@ -1,0 +1,244 @@
+<script>
+	import { goto } from '$app/navigation';
+	import { PUBLIC_BACKEND_BASE_URL } from '$env/static/public';
+	import getUserId from '../../../utils/auth';
+
+	let formErrors = {};
+
+	function postCreateJob() {
+		goto('/');
+	}
+
+	export async function createJob(evt) {
+		evt.preventDefault();
+
+		let userID = getUserId();
+		// console.log(userID);
+		// issue is here, have to format it the correct way so that it can get into
+		const jobData = {
+			applicationInstructions: evt.target['applicationInstruction'].value,
+			description: evt.target['description'].value,
+			employer: evt.target['companyName'].value,
+			location: evt.target['jobLocation'].value,
+			maxAnnualCompensation: parseInt(evt.target['maxAnnualCompensation'].value),
+			minAnnualCompensation: parseInt(evt.target['minAnnualCompensation'].value),
+			requirements: evt.target['requirement'].value,
+			title: evt.target['jobTitle'].value,
+			user: userID,
+			// id: evt.target['id'].value
+
+			// Any other properties you need to set
+		};
+		// console.log(typeof jobData.id);
+
+		const resp = await fetch(PUBLIC_BACKEND_BASE_URL + `/api/collections/jobs/records`, {
+			method: 'POST',
+			mode: 'cors',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(jobData)
+		});
+
+		// console.log(resp.status);
+
+		if (resp.status === 200) {
+			// jobIDStore.set(jobData.id); // Store the job ID
+			postCreateJob();
+		} else {
+			console.log('annoying la');
+
+			formErrors['minAnnualCompensation'] = { message: 'Make sure its a valid number and it has to be smaller than max compensation' };
+
+			formErrors['maxAnnualCompensation'] = { message: 'Make sure its a valid number and it has to be bigger than min compensation' };
+
+			formErrors['companyName'] = { message: 'Type a longer company name la!' };
+
+			formErrors['description'] = { message: 'Type a longer one la' };
+
+			formErrors['requirement'] = { message: 'Type a longer one la' };
+
+			formErrors['applicationInstruction'] = { message: 'Type a longer one la' };
+		}
+
+		return jobData.id;
+	
+	}
+</script>
+
+<button on:click={() => goto('/')}>go to home page</button>
+<div class="flex justify-center items-center mt-8">
+	<form on:submit={createJob} class="w-1/3">
+		<div class="login-control w-full">
+			<label class="label" for="jobTitle">
+				<span class="label-text">Job Title</span>
+			</label>
+			<input
+				type="text"
+				name="jobTitle"
+				placeholder="software engineer"
+				class="input input-bordered w-full"
+			/>
+			{#if 'jobTitle' in formErrors}
+				<label class="label" for="jobTitle">
+					<span class="label-text-alt text-red-500">{formErrors['jobTitle'].message}</span>
+				</label>
+			{/if}
+		</div>
+
+		<!-- <div class="login-control w-full">
+			<label class="label" for="id">
+				<span class="label-text">Job ID</span>
+			</label>
+			<input
+				type="text"
+				name="id"
+				placeholder="123456789abcdef"
+				class="input input-bordered w-full"
+			/>
+			{#if 'id' in formErrors}
+				<label class="label" for="id">
+					<span class="label-text-alt text-red-500">{formErrors['id'].message}</span>
+				</label>
+			{/if}
+		</div> -->
+
+		<div class="login-control w-full">
+			<label class="label" for="minAnnualCompensation">
+				<span class="label-text">Min Annual Compensation</span>
+			</label>
+			<input
+				type="number"
+				name="minAnnualCompensation"
+				placeholder="40000"
+				class="input input-bordered w-full"
+				required
+			/>
+			{#if 'minAnnualCompensation' in formErrors}
+				<label class="label" for="minAnnualCompensation">
+					<span class="label-text-alt text-red-500"
+						>{formErrors['minAnnualCompensation'].message}</span
+					>
+				</label>
+			{/if}
+		</div>
+		<p>USD</p>
+
+		<div class="login-control w-full">
+			<label class="label" for="maxAnnualCompensation">
+				<span class="label-text">Max Annual Compensation</span>
+			</label>
+			<input
+				type="number"
+				name="maxAnnualCompensation"
+				placeholder="250000"
+				class="input input-bordered w-full"
+				required
+			/>
+			{#if 'maxAnnualCompensation' in formErrors}
+				<label class="label" for="maxAnnualCompensation">
+					<span class="label-text-alt text-red-500"
+						>{formErrors['maxAnnualCompensation'].message}</span
+					>
+				</label>
+			{/if}
+		</div>
+		<p>USD</p>
+
+		<div class="login-control w-full">
+			<label class="label" for="companyName">
+				<span class="label-text">Company Name</span>
+			</label>
+			<input
+				type="text"
+				name="companyName"
+				placeholder="facebook"
+				class="input input-bordered w-full"
+				required
+			/>
+			{#if 'companyName' in formErrors}
+				<label class="label" for="companyName">
+					<span class="label-text-alt text-red-500">{formErrors['companyName'].message}</span>
+				</label>
+			{/if}
+		</div>
+
+		<div class="login-control w-full">
+			<label class="label" for="jobLocation">
+				<span class="label-text">Job location</span>
+			</label>
+			<input
+				type="text"
+				name="jobLocation"
+				placeholder="singapore"
+				class="input input-bordered w-full"
+				required
+			/>
+			{#if 'jobLocation' in formErrors}
+				<label class="label" for="jobLocation">
+					<span class="label-text-alt text-red-500">{formErrors['jobLocation'].message}</span>
+				</label>
+			{/if}
+		</div>
+
+		<div class="login-control w-full">
+			<label class="label" for="description">
+				<span class="label-text">Description</span>
+			</label>
+			<input
+				type="text"
+				name="description"
+				placeholder="anything you fuckin want mofo"
+				class="input input-bordered w-full"
+				required
+			/>
+			{#if 'description' in formErrors}
+				<label class="label" for="description">
+					<span class="label-text-alt text-red-500">{formErrors['description'].message}</span>
+				</label>
+			{/if}
+		</div>
+
+		<div class="login-control w-full">
+			<label class="label" for="requirement">
+				<span class="label-text">Requirement</span>
+			</label>
+			<input
+				type="text"
+				name="requirement"
+				placeholder="i need you to suck dick"
+				class="input input-bordered w-full"
+				required
+			/>
+			{#if 'requirement' in formErrors}
+				<label class="label" for="requirement">
+					<span class="label-text-alt text-red-500">{formErrors['requirement'].message}</span>
+				</label>
+			{/if}
+		</div>
+
+		<div class="login-control w-full">
+			<label class="label" for="applicationInstruction">
+				<span class="label-text">Application Instruction</span>
+			</label>
+			<input
+				type="text"
+				name="applicationInstruction"
+				placeholder="need you to suck dick"
+				class="input input-bordered w-full"
+				required
+			/>
+			{#if 'applicationInstruction' in formErrors}
+				<label class="label" for="applicationInstruction">
+					<span class="label-text-alt text-red-500"
+						>{formErrors['applicationInstruction'].message}</span
+					>
+				</label>
+			{/if}
+		</div>
+
+		<div class="login-control w-full mt-4">
+			<button class="btn btn-md">Post Job</button>
+		</div>
+	</form>
+</div>

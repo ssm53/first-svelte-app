@@ -1,8 +1,24 @@
 <script>
 	import SvelteMarkdown from 'svelte-markdown';
 	import humanize from 'humanize-plus';
+	import getUserId from '../../../utils/auth.js';
+	import { goto } from '$app/navigation';
 	export let data;
+
+	let currentUser = getUserId();
+  let userWhoCreated = data.job.user;
+	let jobIDD = data.job.id;
+
+	function clickEdit() {
+		goto(`/jobs/${jobIDD}/edit`)
+	}
+
 </script>
+{#if userWhoCreated === currentUser}
+	<button on:click={clickEdit}>Edit Job</button>
+{/if}
+
+
 
 <div class="mt-10">
 	<div class="flex">

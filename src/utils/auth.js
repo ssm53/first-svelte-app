@@ -28,7 +28,7 @@ export function logOut() {
 
 // A: this one is setting auth to our token and userId. remember, auth is our token and userId. if we got our token, and userid,
 // return our userId.. remmeber, our const auth is trying to replicate the auth from the backend... which is in our localstorage
-export function getUserId() {
+export default function getUserId() {
 	const auth = localStorage.getItem('auth');
 	if (auth) {
 		return JSON.parse(auth)['userId'];
@@ -46,21 +46,23 @@ export function getTokenFromLocalStorage() {
 	return null;
 }
 
-// SHAUN's code - replaces code directly commented below
+// // SHAUN's code - replaces code directly commented below
+// export async function isLoggedIn() {
+// 	if (!getTokenFromLocalStorage()) {
+// 		loggedIn.update((value) => {
+// 			return false;
+// 		});
+// 	} else {
+// 		loggedIn.update((value) => {
+// 			return true;
+// 		});
+// 	}
+// 	//SHAUNS code
+
 export async function isLoggedIn() {
 	if (!getTokenFromLocalStorage()) {
-		loggedIn = false;
-		return loggedIn;
-	} else {
-		loggedIn = true;
+		return false;
 	}
-	//SHAUNS code
-
-	// // now, if no token, then you are not loggged in! - yes
-	// export async function isLoggedIn() {
-	// 	if (!getTokenFromLocalStorage()) {
-	// 		return false;
-	// 	}
 
 	// lastly, why here need to fetch data but others no need?
 	// A: cause here, we are trying to compare our data with the backend.. the other functions above, we were just setting up
@@ -87,6 +89,7 @@ export async function isLoggedIn() {
 					userId: res.record.id
 				})
 			);
+			goto('/');
 
 			return true;
 		}
@@ -121,15 +124,26 @@ export async function authenticateUser(username, password) {
 				userId: res.record.id
 			})
 		);
-
+		//shauns code
+		loggedIn.update((value) => {
+			return true;
+		});
+		goto('/');
+		//shauns code
 		return {
 			success: true,
 			res: res
 		};
+	} else {
+		console.log('fucking annoying');
+		return {
+			success: false,
+			res: res
+		};
 	}
 
-	return {
-		success: false,
-		res: res
-	};
+	// return {
+	// 	success: false,
+	// 	res: res
+	// };
 }
