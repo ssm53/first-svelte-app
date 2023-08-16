@@ -5,6 +5,10 @@
 	import { loggedIn } from '../../../store/store.js';
 	let formErrors = {};
 
+	function goBackHome() {
+		goto("/");
+	}
+
 	function postSignUp() {
 		loggedIn.update((value) => {
 			return true;
@@ -57,7 +61,7 @@
 	}
 </script>
 
-<!-- <button on:click={test}>testing</button> -->
+<button class="go home" on:click={goBackHome}>Go Home</button>
 
 <h1 class="text-center text-xl">Create an Account to Post a Job</h1>
 <div class="text-center">

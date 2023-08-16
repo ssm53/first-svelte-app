@@ -99,6 +99,7 @@ export async function load({ fetch }) {
 // phase 5 - once user submit, we cant actually update job, as some issues with our api call - 404 error code
 
 // to-do
-// do alerts!
-// find out how to do alerts for our form
-// in forms, the template form errors is a template so that our requirements gets checked.. requirements are done in the backend.. no need logic
+// do whole of alerts
+
+// later-to-do
+// do more specific alerts

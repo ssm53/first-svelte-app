@@ -19,9 +19,14 @@
 			goto('jobs/new');
 		}
 	}
+
+	function clickHome() {
+		goto('/');
+	}
 </script>
 
 <main>
+	<button class="go home" on:click={clickHome}>Home</button>
 	{#if logIO === true}
 		<button class="logout-button" on:click={logOut}>log out</button>
 	{:else}

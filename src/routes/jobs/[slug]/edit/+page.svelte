@@ -2,6 +2,7 @@
   import getUserId from '../../../../utils/auth.js';
   import { goto } from "$app/navigation"
   import { PUBLIC_BACKEND_BASE_URL } from '$env/static/public';
+  import ShaunAuth from '../../../../utils/shaun-auth.svelte';
   export let data;
   let formErrors = {}
 
@@ -43,6 +44,18 @@
 			postUpdateJob();
 		} else {
 			console.log('annoying la');
+
+      formErrors['minAnnualCompensation'] = { message: 'Make sure its a valid number and it has to be smaller than max compensation' };
+
+			formErrors['maxAnnualCompensation'] = { message: 'Make sure its a valid number and it has to be bigger than min compensation' };
+
+			formErrors['companyName'] = { message: 'Type a longer company name la!' };
+
+			formErrors['description'] = { message: 'Type a longer one la' };
+
+			formErrors['requirement'] = { message: 'Type a longer one la' };
+
+			formErrors['applicationInstruction'] = { message: 'Type a longer one la' };
 		}
 	
 	}
@@ -50,8 +63,7 @@
   
 </script>
 
-
-
+<ShaunAuth />
 
 <div class="flex justify-center items-center mt-8">
 	<form on:submit={updateJob} class="w-1/3">

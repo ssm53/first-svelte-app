@@ -3,6 +3,8 @@
 	import humanize from 'humanize-plus';
 	import getUserId from '../../../utils/auth.js';
 	import { goto } from '$app/navigation';
+	import ShaunAuth from '../../../utils/shaun-auth.svelte';
+
 	export let data;
 
 	let currentUser = getUserId();
@@ -14,6 +16,7 @@
 	}
 
 </script>
+<ShaunAuth />
 {#if userWhoCreated === currentUser}
 	<button on:click={clickEdit}>Edit Job</button>
 {/if}

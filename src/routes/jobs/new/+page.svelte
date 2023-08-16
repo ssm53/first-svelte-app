@@ -2,6 +2,7 @@
 	import { goto } from '$app/navigation';
 	import { PUBLIC_BACKEND_BASE_URL } from '$env/static/public';
 	import getUserId from '../../../utils/auth';
+	import ShaunAuth from '../../../utils/shaun-auth.svelte';
 
 	let formErrors = {};
 
@@ -66,6 +67,8 @@
 	}
 </script>
 
+<ShaunAuth />
+
 <button on:click={() => goto('/')}>go to home page</button>
 <div class="flex justify-center items-center mt-8">
 	<form on:submit={createJob} class="w-1/3">
@@ -85,23 +88,6 @@
 				</label>
 			{/if}
 		</div>
-
-		<!-- <div class="login-control w-full">
-			<label class="label" for="id">
-				<span class="label-text">Job ID</span>
-			</label>
-			<input
-				type="text"
-				name="id"
-				placeholder="123456789abcdef"
-				class="input input-bordered w-full"
-			/>
-			{#if 'id' in formErrors}
-				<label class="label" for="id">
-					<span class="label-text-alt text-red-500">{formErrors['id'].message}</span>
-				</label>
-			{/if}
-		</div> -->
 
 		<div class="login-control w-full">
 			<label class="label" for="minAnnualCompensation">
