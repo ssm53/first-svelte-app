@@ -95,12 +95,21 @@ export async function load({ fetch }) {
 // phase 5
 // once click edit button, you will be directed to edit page and form is prepopulated. now you can edit it
 
+//phase 6
+// now can successfully update jobs
+
+// phase 7
+// can do alerts
+
 // challenges
-// phase 5 - once user submit, we cant actually update job, as some issues with our api call - 404 error code
 
-// to-do
-// do whole of alerts
+// FUNCTIONALITY TO-DO
+// do login for when we refresh page
+// implement page to see jobs you posted - e.g. kean meng's one
 
-// later-to-do
-// do more specific alerts
-// do login for isloggedin function so if refresh still loggedin
+// STYLE TO-DO
+// do basic css layout - NOTHING FANCY - colour: white BG, black, gold font
+// steps
+// 1. do navbar for all pages - use flex
+// 1. structure main page, and then every subsequent page - arrange content into positions, do boxes for list of jobs, make forms bigger
+// 2. do hover - change mouse icon, shadow, gets bigger

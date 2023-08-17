@@ -26,12 +26,23 @@
 </script>
 
 <main>
-	<button class="go home" on:click={clickHome}>Home</button>
-	{#if logIO === true}
-		<button class="logout-button" on:click={logOut}>log out</button>
+	<div class="bg-orange-500">
+		<div>
+			<button class="inline" on:click={clickHome}>Home</button>
+		</div>
+		{#if logIO === true}
+		<div>
+			<button class="inline" on:click={logOut}>log out</button>
+		</div>
 	{:else}
-		<button class="login-button" on:click={clickLogin}>log in</button>
+	<div>
+		<button class="inline" on:click={clickLogin}>log in</button>
+	</div>
 	{/if}
+	<div>
+		<button class="post-a-job button" on:click={clickPostJob}>post a job</button>
+	</div>
+	
+	</div>
 
-	<button class="post-a-job button" on:click={clickPostJob}>post a job</button>
 </main>

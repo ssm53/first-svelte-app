@@ -7,6 +7,11 @@
   import { getTokenFromLocalStorage } from '../../../../utils/auth.js';
 
   let formErrors = {}
+  let showAlert = false;
+
+  function closeAlert3() {
+    showAlert = false;
+  }
 
   export function postUpdateJob() {
     goto(`/jobs/${data.job.id}`)
@@ -43,33 +48,38 @@
 			body: JSON.stringify(updateJobData)
 		});
 
-    let res = await resp.json();
-    console.log(res);
+    // let res = await resp.json();
+    // console.log(res);
 
 		if (resp.status === 200) {
 			postUpdateJob();
-		} else {
-			console.log('annoying la');
+    console.log('formErrors:', formErrors);
 
-      formErrors['minAnnualCompensation'] = { message: 'Make sure its a valid number and it has to be smaller than max compensation' };
+	} else {
+    const res = await resp.json();
+    formErrors = res.data;
+    showAlert = true;
 
-			formErrors['maxAnnualCompensation'] = { message: 'Make sure its a valid number and it has to be bigger than min compensation' };
-
-			formErrors['companyName'] = { message: 'Type a longer company name la!' };
-
-			formErrors['description'] = { message: 'Type a longer one la' };
-
-			formErrors['requirement'] = { message: 'Type a longer one la' };
-
-			formErrors['applicationInstruction'] = { message: 'Type a longer one la' };
-		}
-	
-	}
+  }
+}
 
   
 </script>
 
 <ShaunAuth />
+
+{#if showAlert}
+  <!-- Show alert if showAlert is true -->
+  <div class="fixed inset-0 flex items-center justify-center">
+    <div class="bg-red-100 border border-red-400 text-red-700 px-6 py-4 rounded relative" role="alert">
+      <strong class="font-bold text-lg mb-2 block">Wrong details!</strong>
+      <span class="text-sm block">Please double check it again.</span>
+      <span class="absolute top-0 right-0 p-4">
+        <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" on:click={closeAlert3}><title>Close</title><path d="M14.348 5.652a.5.5 0 0 0-.707 0L10 9.293 6.354 5.646a.5.5 0 1 0-.708.708L9.293 10l-3.647 3.646a.5.5 0 0 0 .708.708L10 10.707l3.646 3.646a.5.5 0 0 0 .708-.708L10.707 10l3.647-3.646a.5.5 0 0 0 0-.706z"/></svg>
+      </span>
+    </div>
+  </div>
+{/if}
 
 <div class="flex justify-center items-center mt-8">
 	<form on:submit={updateJob} class="w-1/3">
@@ -84,9 +94,9 @@
 				class="input input-bordered w-full"
         value = {data.job.title}
 			/>
-			{#if 'jobTitle' in formErrors}
-				<label class="label" for="jobTitle">
-					<span class="label-text-alt text-red-500">{formErrors['jobTitle'].message}</span>
+			{#if 'title' in formErrors}
+				<label class="label" for="title">
+					<span class="label-text-alt text-red-500">{formErrors['title'].message}</span>
 				</label>
 			{/if}
 		</div>
@@ -147,9 +157,9 @@
         value = {data.job.employer}
 				required
 			/>
-			{#if 'companyName' in formErrors}
-				<label class="label" for="companyName">
-					<span class="label-text-alt text-red-500">{formErrors['companyName'].message}</span>
+			{#if 'employer' in formErrors}
+				<label class="label" for="employer">
+					<span class="label-text-alt text-red-500">{formErrors['employer'].message}</span>
 				</label>
 			{/if}
 		</div>
@@ -166,9 +176,9 @@
         value = {data.job.location}
 				required
 			/>
-			{#if 'jobLocation' in formErrors}
-				<label class="label" for="jobLocation">
-					<span class="label-text-alt text-red-500">{formErrors['jobLocation'].message}</span>
+			{#if 'location' in formErrors}
+				<label class="label" for="location">
+					<span class="label-text-alt text-red-500">{formErrors['location'].message}</span>
 				</label>
 			{/if}
 		</div>
@@ -204,9 +214,9 @@
         value = {data.job.requirements}
 				required
 			/>
-			{#if 'requirement' in formErrors}
-				<label class="label" for="requirement">
-					<span class="label-text-alt text-red-500">{formErrors['requirement'].message}</span>
+			{#if 'requirements' in formErrors}
+				<label class="label" for="requirements">
+					<span class="label-text-alt text-red-500">{formErrors['requirements'].message}</span>
 				</label>
 			{/if}
 		</div>
@@ -223,10 +233,10 @@
         value = {data.job.applicationInstructions}
 				required
 			/>
-			{#if 'applicationInstruction' in formErrors}
-				<label class="label" for="applicationInstruction">
+			{#if 'applicationInstructions' in formErrors}
+				<label class="label" for="applicationInstructions">
 					<span class="label-text-alt text-red-500"
-						>{formErrors['applicationInstruction'].message}</span
+						>{formErrors['applicationInstructions'].message}</span
 					>
 				</label>
 			{/if}
