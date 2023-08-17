@@ -103,3 +103,4 @@ export async function load({ fetch }) {
 
 // later-to-do
 // do more specific alerts
+// do login for isloggedin function so if refresh still loggedin

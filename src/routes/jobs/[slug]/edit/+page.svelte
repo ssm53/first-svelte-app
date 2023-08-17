@@ -1,9 +1,11 @@
 <script>
   import getUserId from '../../../../utils/auth.js';
-  import { goto } from "$app/navigation"
+  import { goto } from "$app/navigation";
   import { PUBLIC_BACKEND_BASE_URL } from '$env/static/public';
   import ShaunAuth from '../../../../utils/shaun-auth.svelte';
   export let data;
+  import { getTokenFromLocalStorage } from '../../../../utils/auth.js';
+
   let formErrors = {}
 
   export function postUpdateJob() {
@@ -12,6 +14,8 @@
 
   export async function updateJob(evt) {
     evt.preventDefault();
+
+    let myToken = getTokenFromLocalStorage();
 
 		let userID = getUserId();
 		// console.log(userID);
@@ -32,7 +36,9 @@
 			method: 'PATCH',
 			mode: 'cors',
 			headers: {
-				'Content-Type': 'application/json'
+				'Content-Type': 'application/json',
+        'Authorization': myToken
+        // need onre more which is authorisation - for that the value will be the token when youre signed in
 			},
 			body: JSON.stringify(updateJobData)
 		});

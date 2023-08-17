@@ -46,25 +46,26 @@
 		if (resp.status === 200) {
 			// jobIDStore.set(jobData.id); // Store the job ID
 			postCreateJob();
-		} else {
-			console.log('annoying la');
+		// } else {
+		// 	console.log('annoying la');
 
-			formErrors['minAnnualCompensation'] = { message: 'Make sure its a valid number and it has to be smaller than max compensation' };
+		// 	formErrors['minAnnualCompensation'] = { message: 'Make sure its a valid number and it has to be smaller than max compensation' };
 
-			formErrors['maxAnnualCompensation'] = { message: 'Make sure its a valid number and it has to be bigger than min compensation' };
+		// 	formErrors['maxAnnualCompensation'] = { message: 'Make sure its a valid number and it has to be bigger than min compensation' };
 
-			formErrors['companyName'] = { message: 'Type a longer company name la!' };
+		// 	formErrors['companyName'] = { message: 'Type a longer company name la!' };
 
-			formErrors['description'] = { message: 'Type a longer one la' };
+		// 	formErrors['description'] = { message: 'Type a longer one la' };
 
-			formErrors['requirement'] = { message: 'Type a longer one la' };
+		// 	formErrors['requirement'] = { message: 'Type a longer one la' };
 
-			formErrors['applicationInstruction'] = { message: 'Type a longer one la' };
-		}
+		// 	formErrors['applicationInstruction'] = { message: 'Type a longer one la' };
+		// }
 
 		return jobData.id;
 	
 	}
+}
 </script>
 
 <ShaunAuth />
@@ -86,7 +87,7 @@
 				<label class="label" for="jobTitle">
 					<span class="label-text-alt text-red-500">{formErrors['jobTitle'].message}</span>
 				</label>
-			{/if}
+			{/if} 
 		</div>
 
 		<div class="login-control w-full">

@@ -4,17 +4,17 @@
 	import { goto } from '$app/navigation';
 
 	let formErrors = {};
-	let isLoading = false; // Add a isLoading variable to track API call status
-	let username = "";
-	let password = "";
+	// let isLoading = false; // Add a isLoading variable to track API call status
+	// let username = "";
+	// let password = "";
 	// let showAlert = false;
 
 	async function handleSubmit(event) {
 		// isLoading = true; // Set isLoading to true when starting the API call
 		event.preventDefault();
 
-		username = event.target.username.value;
-		password = event.target.password.value;
+		let username = event.target.username.value;
+		let password = event.target.password.value;
 
 
 		const { success } = await authenticateUser(username, password);
