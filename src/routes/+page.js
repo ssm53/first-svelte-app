@@ -108,8 +108,8 @@ export async function load({ fetch }) {
 // implement page to see jobs you posted - e.g. kean meng's one
 
 // STYLE TO-DO
-// do basic css layout - NOTHING FANCY - colour: white BG, black, gold font
+// do basic css layout - NOTHING FANCY
 // steps
-// 1. do navbar for all pages - use flex
+// 1. do navbar for all pages - use flex - DONE
 // 1. structure main page, and then every subsequent page - arrange content into positions, do boxes for list of jobs, make forms bigger
 // 2. do hover - change mouse icon, shadow, gets bigger
