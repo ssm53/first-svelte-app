@@ -186,14 +186,16 @@
       <label class="label" for="description">
         <span class="label-text text-lg font-extrabold">Description</span>
       </label>
+
       <input
         type="text"
         name="description"
-        placeholder="be clear and concise"
+        placeholder="singapore"
         class="input input-bordered w-full h-56 hover:shadow hover:shadow-gray-700"
         value={data.job.description}
         required
       />
+   
       {#if 'description' in formErrors}
         <label class="label" for="description">
           <span class="label-text-alt text-red-500">{formErrors['description'].message}</span>
@@ -208,11 +210,13 @@
       <input
         type="text"
         name="requirement"
-        placeholder="write requirements here"
+        placeholder="singapore"
         class="input input-bordered w-full h-56 hover:shadow hover:shadow-gray-700"
         value={data.job.requirements}
         required
       />
+
+
       {#if 'requirements' in formErrors}
         <label class="label" for="requirements">
           <span class="label-text-alt text-red-500">{formErrors['requirements'].message}</span>
@@ -224,14 +228,15 @@
       <label class="label" for="applicationInstruction">
         <span class="label-text text-lg font-extrabold">Application Instruction</span>
       </label>
-      <input 
+      <input
         type="text"
         name="applicationInstruction"
-        placeholder="write application instructions here"
+        placeholder="singapore"
         class="input input-bordered w-full h-56 hover:shadow hover:shadow-gray-700"
         value={data.job.applicationInstructions}
         required
       />
+ 
       {#if 'applicationInstructions' in formErrors}
         <label class="label" for="applicationInstructions">
           <span class="label-text-alt text-red-500"

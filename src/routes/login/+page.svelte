@@ -99,12 +99,25 @@
 				<button class="btn btn-md hover:bg-gray-700 hover:text-yellow-100">Login</button>
 			</div>
 		</form>
-	
-	
+
 		
+			
 	</div>
+	<div class="flex flex-col justify-center items-center w-screen">
+		<div>
+			<p class="text-2xl font-bold">They trust us</p>
+		</div>
+		<div class=" flex flex-row justify-center bg-gray-400 h-20 w-screen">
+			<img src="https://metaschool.so/_next/static/media/job-logo-1.11002397.webp" alt="ripple logo" class=" max-w-full object-scale-down py-5"/>
+			<img src="https://metaschool.so/_next/static/media/job-logo-5.4e6c6ae6.webp" alt="ripple logo" class=" max-w-full object-scale-down py-5"/>
+			<img src="https://metaschool.so/_next/static/media/job-logo-7.1d699287.webp" alt="ripple logo" class=" max-w-full object-scale-down py-5"/>
+			<img src="https://metaschool.so/_next/static/media/job-logo-4.5b2a463a.webp" alt="ripple logo" class=" max-w-full object-scale-down py-5"/>
+		</div>
+	
+  </div>
 
 
 </div>
+
 
 

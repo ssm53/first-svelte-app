@@ -105,13 +105,10 @@ export async function load({ fetch }) {
 
 // FUNCTIONALITY TO-DO
 // implement page to see jobs you posted - e.g. kean meng's one
-// when a user is logged out, they cannot post jobs.. our marketing qzard is posted without a user! do the redirect shit kumaran did
 
-// STYLE TO-DO
-// fix navbar to each sides.
-// put company logo in navbar
-// put logo in login page at top left
+// style extra done
+// added logo
+// did trust us banner
+
+//STYLE TO-DO
 // make sure cursor starts at top of form, and wrap that paragraph in the box
-
-// style challenges
-//
