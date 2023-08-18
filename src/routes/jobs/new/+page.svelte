@@ -2,7 +2,6 @@
 	import { goto } from '$app/navigation';
 	import { PUBLIC_BACKEND_BASE_URL } from '$env/static/public';
 	import getUserId from '../../../utils/auth';
-	import ShaunAuth from '../../../utils/shaun-auth.svelte';
 
 	let formErrors = {};
 	let showAlert = false;
@@ -59,7 +58,7 @@
 }
 </script>
 
-<ShaunAuth />
+
 <div class="bg-yellow-100 h-fit">
 
 {#if showAlert}

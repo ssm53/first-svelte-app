@@ -89,7 +89,9 @@ export async function isLoggedIn() {
 					userId: res.record.id
 				})
 			);
-			goto('/');
+			loggedIn.update((value) => {
+				return true;
+			});
 
 			return true;
 		}

@@ -3,7 +3,6 @@
 	import humanize from 'humanize-plus';
 	import getUserId from '../../../utils/auth.js';
 	import { goto } from '$app/navigation';
-	import ShaunAuth from '../../../utils/shaun-auth.svelte';
 
 	export let data;
 
@@ -16,8 +15,7 @@
 	}
 
 </script>
-<div class="bg-yellow-100 h-screen">
-	<ShaunAuth />
+<div class="bg-yellow-100 h-fit">
 {#if userWhoCreated === currentUser}
 <div class=" flex justify-center ">
 	<button class=" bg-yellow-700 h-10 mt-10 px-5 rounded-md hover:shadow-lg hover:shadow-yellow-700" on:click={clickEdit}>Edit Job</button>
@@ -27,11 +25,11 @@
 
 
 
-<div class="mt-10">
+
 	
 
-	<div class="flex flex-row w-full mt-8">
-		<div class="basis-2/3 prose max-w-none w-full">
+	<div class="flex flex-row w-full">
+		<div class="basis-2/3 prose max-w-none w-full py-8">
 			<h2 class="text-xl font-thin">Title</h2>
 			<SvelteMarkdown source={data.job.title} />
 			<div class="mt-6" />
@@ -47,7 +45,7 @@
 			<h2 class="text-xl font-thin">How to Apply?</h2>
 			<p>{data.job.applicationInstructions}</p>
 		</div>
-		<div class="basis-1/3 ml-4">
+		<div class="basis-1/3 ml-4 py-8">
 			<h2 class="text-xl font-thin">Location</h2>
 			<SvelteMarkdown source={data.job.location} />
 			<div class="mt-6" />
@@ -60,6 +58,7 @@
 		</div>
 	</div>
 </div>
+<div class=" bg-yellow-100 h-screen"></div>
 
-</div>
+
 

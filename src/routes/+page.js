@@ -104,16 +104,14 @@ export async function load({ fetch }) {
 // challenges
 
 // FUNCTIONALITY TO-DO
-// do login for when we refresh page
 // implement page to see jobs you posted - e.g. kean meng's one
-// when a user is logged out, they cannot post jobs.. our marketing qzard is posted without a user!
+// when a user is logged out, they cannot post jobs.. our marketing qzard is posted without a user! do the redirect shit kumaran did
 
 // STYLE TO-DO
-// do basic css layout - NOTHING FANCY
-// steps
-// 1. do navbar for all pages - use flex - DONE
-// 1. structure main page, and then every subsequent page - arrange content into positions, do boxes for list of jobs, make forms bigger
-// 2. do hover - change mouse icon, shadow, gets bigger
+// fix navbar to each sides.
+// put company logo in navbar
+// put logo in login page at top left
+// make sure cursor starts at top of form, and wrap that paragraph in the box
 
 // style challenges
-// for user/new, i cant get the body to be full page
+//

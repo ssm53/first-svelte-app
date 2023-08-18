@@ -42,6 +42,10 @@
 </script>
 
 <div class="bg-yellow-100 h-screen">
+	<div class="flex justify-center py-20">
+		<img src="https://images.websiteplanet.com/wp-content/uploads/2020/08/9-Best-Z-Logos-and-How-to-Make-Your-Own-for-Free-image1.png" alt="Home" class=" w-32 rounded-lg"/>
+	</div>
+
 	<div class="flex justify-center items-center py-8">
 		{#if showAlert}
 		<!-- Show alert if showAlert is true -->

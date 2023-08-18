@@ -1,16 +1,7 @@
 <script>
-	//SHAUNS CODE
-	import ShaunAuth from '../utils/shaun-auth.svelte';
-	//SHAUNS CODE
 	import humanize from 'humanize-plus';
 	export let data;
 </script>
-
-
-
-<!-- SHAUNS CODE -->
-<ShaunAuth />
-<!-- SHAUNS CODE -->
 
 <h1 class="text-center text-xl font-bold bg-yellow-100 pt-10 ">Find Your Next Job</h1>
 <div class="overflow-x-auto w-full bg-yellow-100">

@@ -3,7 +3,6 @@
 	import { goto } from '$app/navigation';
 	import { authenticateUser } from './../../../utils/auth.js';
 	import { loggedIn } from '../../../store/store.js';
-	import ShaunAuth from '../../../utils/shaun-auth.svelte';
 	let formErrors = {};
 
 
@@ -63,7 +62,7 @@
 	}
 </script>
 
-<ShaunAuth />
+
 
 
 <div class="bg-yellow-100 h-screen py-10">
