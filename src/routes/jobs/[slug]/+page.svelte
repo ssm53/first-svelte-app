@@ -16,23 +16,28 @@
 	}
 
 </script>
-<ShaunAuth />
+<div class="bg-yellow-100 h-screen">
+	<ShaunAuth />
 {#if userWhoCreated === currentUser}
-	<button on:click={clickEdit}>Edit Job</button>
+<div class=" flex justify-center ">
+	<button class=" bg-yellow-700 h-10 mt-10 px-5 rounded-md hover:shadow-lg hover:shadow-yellow-700" on:click={clickEdit}>Edit Job</button>
+</div>
 {/if}
 
 
 
+
 <div class="mt-10">
-	<div class="flex">
-		<div class="flex-1">
-			<h1 class="text-3xl font-extrabold">{data.job.title}</h1>
-			<p class="text-xl">{data.job.employer}</p>
-		</div>
-	</div>
+	
 
 	<div class="flex flex-row w-full mt-8">
 		<div class="basis-2/3 prose max-w-none w-full">
+			<h2 class="text-xl font-thin">Title</h2>
+			<SvelteMarkdown source={data.job.title} />
+			<div class="mt-6" />
+			<h2 class="text-xl font-thin">Employer</h2>
+			<SvelteMarkdown source={data.job.employer} />
+			<div class="mt-6" />
 			<h2 class="text-xl font-thin">Description</h2>
 			<SvelteMarkdown source={data.job.description} />
 			<div class="mt-6" />
@@ -44,7 +49,7 @@
 		</div>
 		<div class="basis-1/3 ml-4">
 			<h2 class="text-xl font-thin">Location</h2>
-			<p>{data.job.location}</p>
+			<SvelteMarkdown source={data.job.location} />
 			<div class="mt-6" />
 			<h2 class="text-xl font-thin">Salary Range</h2>
 			<p>
@@ -55,3 +60,6 @@
 		</div>
 	</div>
 </div>
+
+</div>
+

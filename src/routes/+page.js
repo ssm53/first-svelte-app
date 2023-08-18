@@ -106,6 +106,7 @@ export async function load({ fetch }) {
 // FUNCTIONALITY TO-DO
 // do login for when we refresh page
 // implement page to see jobs you posted - e.g. kean meng's one
+// when a user is logged out, they cannot post jobs.. our marketing qzard is posted without a user!
 
 // STYLE TO-DO
 // do basic css layout - NOTHING FANCY
@@ -113,3 +114,6 @@ export async function load({ fetch }) {
 // 1. do navbar for all pages - use flex - DONE
 // 1. structure main page, and then every subsequent page - arrange content into positions, do boxes for list of jobs, make forms bigger
 // 2. do hover - change mouse icon, shadow, gets bigger
+
+// style challenges
+// for user/new, i cant get the body to be full page

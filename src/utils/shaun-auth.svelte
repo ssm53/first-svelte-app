@@ -26,21 +26,21 @@
 </script>
 
 <main>
-	<div class="bg-yellow-100 flex flex-row h-14 justify-between items-center text-white" >
+	<div class=" bg-gray-700 flex flex-row h-14 justify-between items-center text-gray-700" >
 		<div>
-			<button class=" ml-5 bg-orange-800 p-3 rounded-full" on:click={clickHome}>Home</button>
+			<button class=" ml-5 bg-white p-3 rounded-full hover:shadow  hover:shadow-white" on:click={clickHome}>Home</button>
 		</div>
 		{#if logIO === true}
 		<div>
-			<button class=" bg-orange-800 p-3 rounded-full" on:click={logOut}>log out</button>
+			<button class=" bg-white p-3 rounded-full hover:shadow  hover:shadow-white" on:click={logOut}>log out</button>
 		</div>
 	{:else}
 	<div>
-		<button class=" bg-orange-800 p-3 rounded-full" on:click={clickLogin}>log in</button>
+		<button class=" bg-white p-3 rounded-full hover:shadow  hover:shadow-white" on:click={clickLogin}>log in</button>
 	</div>
 	{/if}
 	<div>
-		<button class=" mr-5 bg-orange-800 p-3 rounded-full" on:click={clickPostJob}>post a job</button>
+		<button class=" mr-5 bg-white p-3 rounded-full hover:shadow  hover:shadow-white" on:click={clickPostJob}>post a job</button>
 	</div>
 	
 	</div>

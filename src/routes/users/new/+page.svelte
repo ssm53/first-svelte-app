@@ -3,7 +3,9 @@
 	import { goto } from '$app/navigation';
 	import { authenticateUser } from './../../../utils/auth.js';
 	import { loggedIn } from '../../../store/store.js';
+	import ShaunAuth from '../../../utils/shaun-auth.svelte';
 	let formErrors = {};
+
 
 	function goBackHome() {
 		goto("/");
@@ -61,15 +63,17 @@
 	}
 </script>
 
-<button class="go home" on:click={goBackHome}>Go Home</button>
+<ShaunAuth />
 
-<h1 class="text-center text-xl">Create an Account to Post a Job</h1>
+
+<div class="bg-yellow-100 h-screen py-10">
+	<h1 class="text-center text-xl">Create an Account to Post a Job</h1>
 <div class="text-center">
 	<a class="link-hover italic text-xs" href="/login"
 		>Already have an account? Click here to login instead.</a
 	>
 </div>
-<div class="flex justify-center items-center mt-8">
+<div class="flex justify-center items-center mt-8 bg-yellow-100">
 	<form on:submit={createUser} class="w-1/3">
 		<div class="form-control w-full">
 			<label class="label" for="username">
@@ -143,7 +147,13 @@
 		</div>
 
 		<div class="form-control w-full mt-4">
-			<button class="btn btn-md">Create an Account</button>
+			<button class="btn btn-md text-gray-700 hover:bg-gray-700 hover:shadow hover:shadow-gray-700 hover:text-yellow-100">Create an Account</button>
 		</div>
 	</form>
 </div>
+
+
+</div>
+
+
+
