@@ -186,15 +186,15 @@
       <label class="label" for="description">
         <span class="label-text text-lg font-extrabold">Description</span>
       </label>
+      <textarea
+      name="description"
+      placeholder="Description goes here"
+      class="input input-bordered w-full h-56 hover:shadow hover:shadow-gray-700 resize-none overflow-auto"
+      bind:value={data.job.description}
+      required
+      ></textarea>
 
-      <input
-        type="text"
-        name="description"
-        placeholder="singapore"
-        class="input input-bordered w-full h-56 hover:shadow hover:shadow-gray-700"
-        value={data.job.description}
-        required
-      />
+
    
       {#if 'description' in formErrors}
         <label class="label" for="description">
@@ -207,14 +207,14 @@
       <label class="label" for="requirement">
         <span class="label-text text-lg font-extrabold">Requirement</span>
       </label>
-      <input
-        type="text"
-        name="requirement"
-        placeholder="singapore"
-        class="input input-bordered w-full h-56 hover:shadow hover:shadow-gray-700"
-        value={data.job.requirements}
-        required
-      />
+      <textarea
+      name="requirement"
+      placeholder="state your requirements here"
+      class="input input-bordered w-full h-56 hover:shadow hover:shadow-gray-700 resize-none overflow-auto"
+      bind:value={data.job.requirements}
+      required
+      ></textarea>
+
 
 
       {#if 'requirements' in formErrors}
@@ -228,14 +228,14 @@
       <label class="label" for="applicationInstruction">
         <span class="label-text text-lg font-extrabold">Application Instruction</span>
       </label>
-      <input
-        type="text"
-        name="applicationInstruction"
-        placeholder="singapore"
-        class="input input-bordered w-full h-56 hover:shadow hover:shadow-gray-700"
-        value={data.job.applicationInstructions}
-        required
-      />
+      <textarea
+      name="applicationInstruction"
+      placeholder="let them know what to do"
+      class="input input-bordered w-full h-56 hover:shadow hover:shadow-gray-700 resize-none overflow-auto"
+      bind:value={data.job.applicationInstructions}
+      required
+      ></textarea>
+    
  
       {#if 'applicationInstructions' in formErrors}
         <label class="label" for="applicationInstructions">

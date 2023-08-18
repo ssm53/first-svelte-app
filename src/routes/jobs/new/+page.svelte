@@ -179,13 +179,13 @@
 				<label class="label" for="description">
 					<span class="label-text text-lg font-extrabold">Description</span>
 				</label>
-				<input
-					type="text"
-					name="description"
-					placeholder="be clear and concise"
-					class="input input-bordered w-full h-56 hover:shadow hover:shadow-gray-700"
-					required
-				/>
+				<textarea
+				name="description"
+				placeholder="let them know what to do"
+				class="input input-bordered w-full h-56 hover:shadow hover:shadow-gray-700 resize-none overflow-auto"
+				required
+				></textarea>
+
 				{#if 'description' in formErrors}
 					<label class="label" for="description">
 						<span class="label-text-alt text-red-500">{formErrors['description'].message}</span>
@@ -197,13 +197,13 @@
 				<label class="label" for="requirement">
 					<span class="label-text text-lg font-extrabold">Requirement</span>
 				</label>
-				<input
-					type="text"
-					name="requirement"
-					placeholder="write requirements here"
-					class="input input-bordered w-full h-56 hover:shadow hover:shadow-gray-700"
-					required
-				/>
+				<textarea
+				name="requirement"
+				placeholder="let them know what to do"
+				class="input input-bordered w-full h-56 hover:shadow hover:shadow-gray-700 resize-none overflow-auto"
+				required
+				></textarea>
+
 				{#if 'requirements' in formErrors}
 					<label class="label" for="requirements">
 						<span class="label-text-alt text-red-500">{formErrors['requirements'].message}</span>
@@ -215,13 +215,13 @@
 				<label class="label" for="applicationInstruction">
 					<span class="label-text text-lg font-extrabold">Application Instruction</span>
 				</label>
-				<input 
-					type="text"
-					name="applicationInstruction"
-					placeholder="write application instructions here"
-					class="input input-bordered w-full h-56 hover:shadow hover:shadow-gray-700"
-					required
-				/>
+				<textarea
+				name="applicationInstruction"
+				placeholder="let them know what to do"
+				class="input input-bordered w-full h-56 hover:shadow hover:shadow-gray-700 resize-none overflow-auto"
+				required
+				></textarea>
+
 				{#if 'applicationInstructions' in formErrors}
 					<label class="label" for="applicationInstructions">
 						<span class="label-text-alt text-red-500"

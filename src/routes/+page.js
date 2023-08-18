@@ -109,6 +109,7 @@ export async function load({ fetch }) {
 // style extra done
 // added logo
 // did trust us banner
+// made sure cursor starts top - left
 
 //STYLE TO-DO
 // make sure cursor starts at top of form, and wrap that paragraph in the box
