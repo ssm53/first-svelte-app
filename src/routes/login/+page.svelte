@@ -1,6 +1,8 @@
 <script>
 	import { authenticateUser } from '../../utils/auth';
 	import { goto } from '$app/navigation';
+	import Spinner from '../../spinner/spinner.svelte';
+	import { loading } from '../../store/store';
 
 	let formErrors = {};
 
@@ -14,6 +16,10 @@
 
 	async function handleSubmit(event) {
 		event.preventDefault();
+		// spinner shit
+		loading.update((value) => {
+			return true
+		})
 
 		username = event.target.username.value;
 		password = event.target.password.value;
@@ -22,19 +28,17 @@
 		const { success } = await authenticateUser(username, password);
 
 		if (success) {
+			// spinner shits
+			loading.update((value) => {
+				return false
+			})
 			// Successful login, navigate to the home page
 			goto('/');
 		} else {
-			// formErrors['username'] = { message: 'Wrong username or password' };
-			// formErrors['password'] = { message: 'Wrong username or password' };
-
-
-
-
-		// 	if (evt.target['password'].value != evt.target['password-confirmation'].value) {
-		// 	formErrors['password'] = { message: 'Password confirmation does not match' };
-		// 	return;
-		// }
+			loading.update((value) => {
+				return false
+			})
+			
 
 			showAlert = true;
 		}
@@ -42,6 +46,7 @@
 </script>
 
 <div class="bg-yellow-100 h-screen">
+	<Spinner />
 	<div class="flex justify-center py-20">
 		<img src="https://images.websiteplanet.com/wp-content/uploads/2020/08/9-Best-Z-Logos-and-How-to-Make-Your-Own-for-Free-image1.png" alt="Home" class=" w-32 rounded-lg"/>
 	</div>

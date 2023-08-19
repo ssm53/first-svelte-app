@@ -103,13 +103,18 @@ export async function load({ fetch }) {
 
 // challenges
 
-// FUNCTIONALITY TO-DO
-// implement page to see jobs you posted - e.g. kean meng's one
-
 // style extra done
 // added logo
 // did trust us banner
 // made sure cursor starts top - left
 
 //STYLE TO-DO
-// make sure cursor starts at top of form, and wrap that paragraph in the box
+// do this animation intersect scroll - https://www.youtube.com/watch?v=T33NN_pPeNI&ab_channel=BeyondFireship
+
+// FUNCTIONALITY TO-DO
+// implement page to see jobs you posted - e.g. kean meng's one
+// do spinners - https://www.youtube.com/watch?v=4Mp-EQnJSTw&ab_channel=Syntax
+
+// we get user id from getuserid function...put it in our api call
+// we need to search for jobs based on user who created - do a getpost to this http://localhost:8080/api/collections/jobs/records?filter=(user='mpmztqu52bfj7q4')
+// we await the response

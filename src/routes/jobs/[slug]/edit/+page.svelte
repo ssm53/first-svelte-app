@@ -4,6 +4,8 @@
   import { PUBLIC_BACKEND_BASE_URL } from '$env/static/public';
   export let data;
   import { getTokenFromLocalStorage } from '../../../../utils/auth.js';
+  import { loading } from '../../../../store/store.js';
+  import Spinner from '../../../../spinner/spinner.svelte';
 
   let formErrors = {}
   let showAlert = false;
@@ -18,6 +20,9 @@
 
   export async function updateJob(evt) {
     evt.preventDefault();
+    loading.update((value) => {
+      return true
+    })
 
     let myToken = getTokenFromLocalStorage();
 
@@ -51,10 +56,16 @@
     // console.log(res);
 
 		if (resp.status === 200) {
+      loading.update((value) => {
+        return false
+      })
 			postUpdateJob();
     console.log('formErrors:', formErrors);
 
 	} else {
+    loading.update((value) => {
+      return false
+    })
     const res = await resp.json();
     formErrors = res.data;
     showAlert = true;
@@ -66,6 +77,7 @@
 </script>
 
 <div class="bg-yellow-100 h-fit">
+  <Spinner />
 
 {#if showAlert}
   <!-- Show alert if showAlert is true -->

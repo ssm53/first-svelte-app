@@ -2,6 +2,8 @@
 	import { goto } from '$app/navigation';
 	import { PUBLIC_BACKEND_BASE_URL } from '$env/static/public';
 	import getUserId from '../../../utils/auth';
+	import { loading } from '../../../store/store';
+	import Spinner from '../../../spinner/spinner.svelte';
 
 	let formErrors = {};
 	let showAlert = false;
@@ -16,6 +18,9 @@
 
 	export async function createJob(evt) {
 		evt.preventDefault();
+		loading.update((value) => {
+			return true
+		})
 
 		let userID = getUserId();
 		// console.log(userID);
@@ -48,9 +53,15 @@
 		// console.log(resp.status);
 
 		if (resp.status === 200) {
+			loading.update((value) => {
+				return false
+			})
 			// jobIDStore.set(jobData.id); // Store the job ID
 			postCreateJob();
 	} else {
+		loading.update((value) => {
+			return false
+		})
 		const res = await resp.json();
     formErrors = res.data;
 		showAlert = true;
@@ -60,6 +71,7 @@
 
 
 <div class="bg-yellow-100 h-fit">
+	<Spinner />
 
 {#if showAlert}
   <!-- Show alert if showAlert is true -->
