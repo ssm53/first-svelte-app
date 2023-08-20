@@ -108,6 +108,7 @@ export async function load({ fetch }) {
 // added logo
 // did trust us banner
 // made sure cursor starts top - left
+// did neon glowing login button
 
 //STYLE TO-DO
 // do this animation intersect scroll - https://www.youtube.com/watch?v=T33NN_pPeNI&ab_channel=BeyondFireship

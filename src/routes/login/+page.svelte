@@ -45,7 +45,7 @@
 	}
 </script>
 
-<div class="bg-yellow-100 h-screen">
+<div class=" bg-black h-screen">
 	<Spinner />
 	<div class="flex justify-center py-20">
 		<img src="https://images.websiteplanet.com/wp-content/uploads/2020/08/9-Best-Z-Logos-and-How-to-Make-Your-Own-for-Free-image1.png" alt="Home" class=" w-32 rounded-lg"/>
@@ -67,7 +67,7 @@
 		<form on:submit={handleSubmit} class="w-1/3">
 			<div class="login-control w-full">
 				<label class="label" for="username">
-					<span class="label-text">Username</span>
+					<span class="label-text text-white">Username</span>
 				</label>
 				<input
 					type="text"
@@ -84,7 +84,7 @@
 		
 			<div class="login-control w-full">
 				<label class="label" for="password">
-					<span class="label-text">Password</span>
+					<span class="label-text text-white">Password</span>
 				</label>
 				<input
 					type="password"
@@ -100,8 +100,9 @@
 				{/if}
 			</div>
 		
-			<div class="login-control w-full mt-4">
-				<button class="btn btn-md hover:bg-gray-700 hover:text-yellow-100">Login</button>
+			<div class=" relative login-control w-full mt-4 group">
+					<div class="absolute w-20 h-10 inset-0 bg-gradient-to-r from-pink-600 to-purple-600 opacity-75 rounded-lg blur-xl group-hover:opacity-100 transition duration-200"></div>
+				  <button class=" relative w-20 h-10 bg-black text-gray-300 group-hover:text-white transition duration-200 rounded-lg ">Login</button>
 			</div>
 		</form>
 
@@ -110,7 +111,7 @@
 	</div>
 	<div class="flex flex-col justify-center items-center w-screen">
 		<div>
-			<p class="text-2xl font-bold">They trust us</p>
+			<p class="text-2xl font-bold text-white">They trust us</p>
 		</div>
 		<div class=" flex flex-row justify-center bg-gray-400 h-20 w-screen">
 			<img src="https://metaschool.so/_next/static/media/job-logo-1.11002397.webp" alt="ripple logo" class=" max-w-full object-scale-down py-5"/>
