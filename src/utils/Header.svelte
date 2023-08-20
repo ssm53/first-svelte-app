@@ -20,6 +20,10 @@
 		}
 	}
 
+	function clickMyJobs() {
+		goto('/jobs/myJobs')
+	}
+
 	function clickHome() {
 		goto('/');
 	}
@@ -42,6 +46,9 @@
 		  <button class=" bg-white p-3 rounded-full hover:shadow  hover:shadow-white mr-5 w-40" on:click={clickLogin}>log in</button>
 	  </div>
 	  {/if}
+		<div>
+		  <button class=" mr-5 bg-white p-3 rounded-full hover:shadow  hover:shadow-white w-40" on:click={clickMyJobs}>My Jobs</button>
+	  </div>
 	  <div>
 		  <button class=" mr-5 bg-white p-3 rounded-full hover:shadow  hover:shadow-white w-40" on:click={clickPostJob}>post a job</button>
 	  </div>

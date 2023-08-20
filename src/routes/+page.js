@@ -101,7 +101,8 @@ export async function load({ fetch }) {
 // phase 7
 // can do alerts
 
-// challenges
+// phase 8
+// did kean meng's thingy!
 
 // style extra done
 // added logo
@@ -113,7 +114,6 @@ export async function load({ fetch }) {
 
 // FUNCTIONALITY TO-DO
 // implement page to see jobs you posted - e.g. kean meng's one
-// do spinners - https://www.youtube.com/watch?v=4Mp-EQnJSTw&ab_channel=Syntax
 
 // we get user id from getuserid function...put it in our api call
 // we need to search for jobs based on user who created - do a getpost to this http://localhost:8080/api/collections/jobs/records?filter=(user='mpmztqu52bfj7q4')
