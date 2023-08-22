@@ -111,11 +111,13 @@ export async function load({ fetch }) {
 // did neon glowing login button
 
 //STYLE TO-DO
+// change website theme to black
 // do this animation intersect scroll - https://www.youtube.com/watch?v=T33NN_pPeNI&ab_channel=BeyondFireship
+// do neon button - see neon component
+// do blob - https://www.youtube.com/watch?v=4ALLynsZ0u0&list=PL4-IK0AVhVjMI45H5E9oE47wj-7AZLNnK&index=34&ab_channel=KevinPowell
+// do button ripple effect - https://www.youtube.com/watch?v=ueyRcYEmsrI&ab_channel=OnlineTutorials
+// do slider
+// do navbar like this - https://www.youtube.com/watch?v=EXzotQV4tDM&ab_channel=El_ShadowAcademy
+// do colour change theme
 
 // FUNCTIONALITY TO-DO
-// implement page to see jobs you posted - e.g. kean meng's one
-
-// we get user id from getuserid function...put it in our api call
-// we need to search for jobs based on user who created - do a getpost to this http://localhost:8080/api/collections/jobs/records?filter=(user='mpmztqu52bfj7q4')
-// we await the response
