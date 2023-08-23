@@ -119,3 +119,7 @@ export async function load({ fetch }) {
 // do darkmode - https://www.youtube.com/watch?v=oMOe_32M6ss&ab_channel=JohnKomarnicki
 
 // FUNCTIONALITY TO-DO
+// do filter! based on job function, location and salary. e.g. cryptojobs bookmark
+// do button 'filter jobs' on main page
+// once clicked, a big modal pops out, and we can see all the filters
+// allow them to choose filters, and click see jobs. the modal will close and they can see the jobs
