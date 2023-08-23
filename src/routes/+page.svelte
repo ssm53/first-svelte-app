@@ -6,9 +6,9 @@
 <h1 class="text-center text-xl font-bold bg-black pt-10 text-white ">Find Your Next Job</h1>
 <div class="overflow-x-auto w-full bg-black">
 	{#each data.jobs as job}
-		<div class="flex flex-row mt-10 ml-4 mr-4 border-4 border-pink-500 text-white rounded-lg py-10 hover:bg-pink-500 hover:shadow-xl hover:shadow-pink-500 hover:text-black">
+		<a class="flex flex-row mt-10 ml-4 mr-4 border-4 border-pink-500 text-white rounded-lg py-10 hover:bg-pink-500 hover:shadow-xl hover:shadow-pink-500 hover:text-black" href="/jobs/{job.id}">
 			<div class="flex flex-col mt-4 w-4/6 pl-3">
-				<a class="font-bold text-2xl" href="/jobs/{job.id}">{job.title}</a>
+				<div class="font-bold text-2xl">{job.title}</div>
 				<span>{job.employer} | {job.location}</span>
 				<p class="w-4/6 mt-5">{job.description.slice(0, 240)}...</p>
 			</div>
@@ -29,6 +29,6 @@
 					})}
 				</div>
 			</div>
-		</div>
+		</a>
 	{/each}
 </div>
