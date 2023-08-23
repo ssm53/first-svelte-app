@@ -70,7 +70,7 @@
 </script>
 
 
-<div class="bg-yellow-100 h-fit">
+<div class="bg-black h-fit">
 	<Spinner />
 
 {#if showAlert}
@@ -94,13 +94,13 @@
 		<form on:submit={createJob} class=" w-5/6">
 			<div class="login-control w-full">
 				<label class="label" for="jobTitle">
-					<span class="label-text text-lg font-extrabold">Job Title</span>
+					<span class="label-text text-lg font-extrabold text-white">Job Title</span>
 				</label>
 				<input
 					type="text"
 					name="jobTitle"
 					placeholder="software engineer"
-					class="input input-bordered w-full hover:shadow hover:shadow-gray-700"
+					class="input input-bordered text-white bg-black border-4 border-pink-500 w-full hover:shadow hover:shadow-pink-500"
 				/>
 				{#if 'title' in formErrors}
 					<label class="label" for="title">
@@ -111,13 +111,13 @@
 	
 			<div class="login-control w-full">
 				<label class="label" for="minAnnualCompensation">
-					<span class="label-text text-lg font-extrabold">Min Annual Compensation</span>
+					<span class="label-text text-lg font-extrabold text-white">Min Annual Compensation</span>
 				</label>
 				<input
 					type="number"
 					name="minAnnualCompensation"
 					placeholder="40000"
-					class="input input-bordered w-full hover:shadow hover:shadow-gray-700"
+					class="input input-bordered w-full  text-white bg-black border-4 border-pink-500 hover:shadow hover:shadow-pink-500"
 					required
 				/>
 				{#if 'minAnnualCompensation' in formErrors}
@@ -132,13 +132,13 @@
 	
 			<div class="login-control w-full">
 				<label class="label" for="maxAnnualCompensation">
-					<span class="label-text text-lg font-extrabold">Max Annual Compensation</span>
+					<span class="label-text text-lg font-extrabold text-white">Max Annual Compensation</span>
 				</label>
 				<input
 					type="number"
 					name="maxAnnualCompensation"
 					placeholder="250000"
-					class="input input-bordered w-full hover:shadow hover:shadow-gray-700"
+					class="input input-bordered w-full  text-white bg-black border-4 border-pink-500 hover:shadow hover:shadow-pink-500"
 					required
 				/>
 				{#if 'maxAnnualCompensation' in formErrors}
@@ -153,13 +153,13 @@
 	
 			<div class="login-control w-full">
 				<label class="label" for="companyName">
-					<span class="label-text text-lg font-extrabold">Company Name</span>
+					<span class="label-text text-lg font-extrabold text-white">Company Name</span>
 				</label>
 				<input
 					type="text"
 					name="companyName"
 					placeholder="facebook"
-					class="input input-bordered w-full hover:shadow hover:shadow-gray-700"
+					class="input input-bordered w-full  text-white bg-black border-4 border-pink-500 hover:shadow hover:shadow-pink-500"
 					required
 				/>
 				{#if 'employer' in formErrors}
@@ -171,13 +171,13 @@
 	
 			<div class="login-control w-full">
 				<label class="label" for="jobLocation">
-					<span class="label-text text-lg font-extrabold">Job location</span>
+					<span class="label-text text-lg font-extrabold text-white">Job location</span>
 				</label>
 				<input
 					type="text"
 					name="jobLocation"
 					placeholder="singapore"
-					class="input input-bordered w-full hover:shadow hover:shadow-gray-700"
+					class="input input-bordered w-full  text-white bg-black border-4 border-pink-500 hover:shadow hover:shadow-pink-500"
 					required
 				/>
 				{#if 'location' in formErrors}
@@ -189,12 +189,12 @@
 	
 			<div class="login-control w-full">
 				<label class="label" for="description">
-					<span class="label-text text-lg font-extrabold">Description</span>
+					<span class="label-text text-lg font-extrabold text-white">Description</span>
 				</label>
 				<textarea
 				name="description"
 				placeholder="let them know what to do"
-				class="input input-bordered w-full h-56 hover:shadow hover:shadow-gray-700 resize-none overflow-auto"
+				class="input input-bordered w-full h-56  text-white bg-black border-4 border-pink-500 hover:shadow hover:shadow-pink-500 resize-none overflow-auto"
 				required
 				></textarea>
 
@@ -207,12 +207,12 @@
 	
 			<div class="login-control w-full">
 				<label class="label" for="requirement">
-					<span class="label-text text-lg font-extrabold">Requirement</span>
+					<span class="label-text text-lg font-extrabold text-white">Requirement</span>
 				</label>
 				<textarea
 				name="requirement"
 				placeholder="let them know what to do"
-				class="input input-bordered w-full h-56 hover:shadow hover:shadow-gray-700 resize-none overflow-auto"
+				class="input input-bordered w-full h-56  text-white bg-black border-4 border-pink-500 hover:shadow hover:shadow-pink-500 resize-none overflow-auto"
 				required
 				></textarea>
 
@@ -225,12 +225,12 @@
 	
 			<div class="login-control w-full">
 				<label class="label" for="applicationInstruction">
-					<span class="label-text text-lg font-extrabold">Application Instruction</span>
+					<span class="label-text text-lg font-extrabold text-white">Application Instruction</span>
 				</label>
 				<textarea
 				name="applicationInstruction"
 				placeholder="let them know what to do"
-				class="input input-bordered w-full h-56 hover:shadow hover:shadow-gray-700 resize-none overflow-auto"
+				class="input input-bordered w-full h-56  text-white bg-black border-4 border-pink-500 hover:shadow hover:shadow-pink-500 resize-none overflow-auto"
 				required
 				></textarea>
 
@@ -244,7 +244,7 @@
 			</div>
 	
 			<div class="login-control w-full mt-4">
-				<button class="btn btn-md hover:bg-gray-700 hover:text-yellow-100 hover: shadow hover:shadow-gray-700">Post Job</button>
+				<button class="btn btn-md text-white bg-black border-4 border-pink-500 hover:bg-gray-700 hover:text-yellow-100 hover: shadow hover:shadow-gray-700">Post Job</button>
 			</div>
 		</form>
 	</div>

@@ -76,7 +76,7 @@
   
 </script>
 
-<div class="bg-yellow-100 h-fit">
+<div class=" bg-black h-fit">
   <Spinner />
 
 {#if showAlert}
@@ -96,13 +96,13 @@
   <form on:submit={updateJob} class=" w-5/6">
     <div class="login-control w-full">
       <label class="label" for="jobTitle">
-        <span class="label-text text-lg font-extrabold">Job Title</span>
+        <span class="label-text text-lg font-extrabold text-white">Job Title</span>
       </label>
       <input
         type="text"
         name="jobTitle"
         placeholder="software engineer"
-        class="input input-bordered w-full hover:shadow hover:shadow-gray-700"
+        class="input input-bordered w-full hover:shadow hover:shadow-pink-500 bg-black text-white border-4 border-pink-500"
         value={data.job.title}
       />
       {#if 'title' in formErrors}
@@ -114,13 +114,13 @@
 
     <div class="login-control w-full">
       <label class="label" for="minAnnualCompensation">
-        <span class="label-text text-lg font-extrabold">Min Annual Compensation</span>
+        <span class="label-text text-lg font-extrabold text-white">Min Annual Compensation</span>
       </label>
       <input
         type="number"
         name="minAnnualCompensation"
         placeholder="40000"
-        class="input input-bordered w-full hover:shadow hover:shadow-gray-700"
+        class="input input-bordered w-full border-4 border-pink-500 hover:shadow hover:shadow-pink-500 bg-black text-white"
         value={data.job.minAnnualCompensation}
         required
       />
@@ -136,13 +136,13 @@
 
     <div class="login-control w-full">
       <label class="label" for="maxAnnualCompensation">
-        <span class="label-text text-lg font-extrabold">Max Annual Compensation</span>
+        <span class="label-text text-lg font-extrabold text-white">Max Annual Compensation</span>
       </label>
       <input
         type="number"
         name="maxAnnualCompensation"
         placeholder="250000"
-        class="input input-bordered w-full hover:shadow hover:shadow-gray-700"
+        class="input input-bordered w-full border-4 border-pink-500 text-white bg-black hover:shadow hover:shadow-gray-700"
         value={data.job.maxAnnualCompensation}
         required
       />
@@ -158,13 +158,13 @@
 
     <div class="login-control w-full">
       <label class="label" for="companyName">
-        <span class="label-text text-lg font-extrabold">Company Name</span>
+        <span class="label-text text-lg font-extrabold text-white">Company Name</span>
       </label>
       <input
         type="text"
         name="companyName"
         placeholder="facebook"
-        class="input input-bordered w-full hover:shadow hover:shadow-gray-700"
+        class="input input-bordered border-4 border-pink-500 w-full hover:shadow hover:shadow-pink-500 text-white bg-black"
         value={data.job.employer}
         required
       />
@@ -177,13 +177,13 @@
 
     <div class="login-control w-full">
       <label class="label" for="jobLocation">
-        <span class="label-text text-lg font-extrabold">Job location</span>
+        <span class="label-text text-lg font-extrabold text-white">Job location</span>
       </label>
       <input
         type="text"
         name="jobLocation"
         placeholder="singapore"
-        class="input input-bordered w-full hover:shadow hover:shadow-gray-700"
+        class="input input-bordered w-full border-4 border-pink-500 text-white bg-black hover:shadow hover:shadow-pink-500"
         value={data.job.location}
         required
       />
@@ -196,12 +196,12 @@
 
     <div class="login-control w-full">
       <label class="label" for="description">
-        <span class="label-text text-lg font-extrabold">Description</span>
+        <span class="label-text text-lg font-extrabold text-white">Description</span>
       </label>
       <textarea
       name="description"
       placeholder="Description goes here"
-      class="input input-bordered w-full h-56 hover:shadow hover:shadow-gray-700 resize-none overflow-auto"
+      class="input input-bordered w-full h-56 text-white bg-black border-4 border-pink-500 hover:shadow hover:shadow-pink-500 resize-none overflow-auto"
       bind:value={data.job.description}
       required
       ></textarea>
@@ -217,12 +217,12 @@
 
     <div class="login-control w-full">
       <label class="label" for="requirement">
-        <span class="label-text text-lg font-extrabold">Requirement</span>
+        <span class="label-text text-lg font-extrabold text-white">Requirement</span>
       </label>
       <textarea
       name="requirement"
       placeholder="state your requirements here"
-      class="input input-bordered w-full h-56 hover:shadow hover:shadow-gray-700 resize-none overflow-auto"
+      class="input input-bordered w-full h-56 text-white bg-black border-4 border-pink-500 hover:shadow hover:shadow-pink-500 resize-none overflow-auto"
       bind:value={data.job.requirements}
       required
       ></textarea>
@@ -238,12 +238,12 @@
 
     <div class="login-control w-full">
       <label class="label" for="applicationInstruction">
-        <span class="label-text text-lg font-extrabold">Application Instruction</span>
+        <span class="label-text text-lg font-extrabold text-white">Application Instruction</span>
       </label>
       <textarea
       name="applicationInstruction"
       placeholder="let them know what to do"
-      class="input input-bordered w-full h-56 hover:shadow hover:shadow-gray-700 resize-none overflow-auto"
+      class="input input-bordered w-full h-56 text-white bg-black border-4 border-pink-500 hover:shadow hover:shadow-pink-500 resize-none overflow-auto"
       bind:value={data.job.applicationInstructions}
       required
       ></textarea>
@@ -259,7 +259,7 @@
     </div>
 
     <div class="login-control w-full mt-4">
-      <button class="btn btn-md hover:bg-gray-700 hover:text-yellow-100 hover: shadow hover:shadow-gray-700">Edit Job</button>
+      <button class="btn btn-md text-white bg-black border-4 border-pink-500 hover:bg-gray-700 hover:text-yellow-100 hover: shadow hover:shadow-gray-700">Edit Job</button>
     </div>
   </form>
 </div>

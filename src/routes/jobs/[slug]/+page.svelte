@@ -15,10 +15,10 @@
 	}
 
 </script>
-<div class="bg-yellow-100 h-fit">
+<div class=" bg-black h-fit">
 {#if userWhoCreated === currentUser}
 <div class=" flex justify-center ">
-	<button class=" bg-yellow-700 h-10 mt-10 px-5 rounded-md hover:shadow-lg hover:shadow-yellow-700" on:click={clickEdit}>Edit Job</button>
+	<button class=" bg-black border-2 border-pink-500 text-white h-10 mt-10 px-5 rounded-md hover:shadow-lg hover:shadow-pink-500" on:click={clickEdit}>Edit Job</button>
 </div>
 {/if}
 
@@ -28,28 +28,28 @@
 
 	
 
-	<div class="flex flex-row w-full">
-		<div class="basis-2/3 prose max-w-none w-full py-8">
-			<h2 class="text-xl font-thin">Title</h2>
+	<div class="flex flex-row w-full text-white">
+		<div class="basis-2/3 prose max-w-none w-full py-8 text-white">
+			<h2 class="text-xl font-thin text-white">Title</h2>
 			<SvelteMarkdown source={data.job.title} />
 			<div class="mt-6" />
-			<h2 class="text-xl font-thin">Employer</h2>
+			<h2 class="text-xl font-thin text-white">Employer</h2>
 			<SvelteMarkdown source={data.job.employer} />
 			<div class="mt-6" />
-			<h2 class="text-xl font-thin">Description</h2>
+			<h2 class="text-xl font-thin text-white">Description</h2>
 			<SvelteMarkdown source={data.job.description} />
 			<div class="mt-6" />
-			<h2 class="text-xl font-thin">Requirements</h2>
+			<h2 class="text-xl font-thin text-white">Requirements</h2>
 			<SvelteMarkdown source={data.job.requirements} />
 			<div class="mt-6" />
-			<h2 class="text-xl font-thin">How to Apply?</h2>
+			<h2 class="text-xl font-thin text-white">How to Apply?</h2>
 			<p>{data.job.applicationInstructions}</p>
 		</div>
 		<div class="basis-1/3 ml-4 py-8">
-			<h2 class="text-xl font-thin">Location</h2>
+			<h2 class="text-xl font-thin text-white">Location</h2>
 			<SvelteMarkdown source={data.job.location} />
 			<div class="mt-6" />
-			<h2 class="text-xl font-thin">Salary Range</h2>
+			<h2 class="text-xl font-thin text-white">Salary Range</h2>
 			<p>
 				USD {humanize.formatNumber(data.job.minAnnualCompensation)} - USD {humanize.formatNumber(
 					data.job.maxAnnualCompensation
@@ -58,7 +58,7 @@
 		</div>
 	</div>
 </div>
-<div class=" bg-yellow-100 h-screen"></div>
+<div class=" bg-black h-screen"></div>
 
 
 

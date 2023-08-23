@@ -65,24 +65,24 @@
 
 
 
-<div class=" bg-yellow-100 h-screen py-10">
-	<h1 class="text-center text-xl">Create an Account to Post a Job</h1>
+<div class=" bg-black h-screen py-10">
+	<h1 class="text-center text-xl text-white">Create an Account to Post a Job</h1>
 <div class="text-center">
-	<a class="link-hover italic text-xs" href="/login"
+	<a class="link-hover italic text-xs text-white" href="/login"
 		>Already have an account? Click here to login instead.</a
 	>
 </div>
-<div class="flex justify-center items-center mt-8 bg-yellow-100">
+<div class="flex justify-center items-center mt-8 bg-black">
 	<form on:submit={createUser} class="w-1/3">
 		<div class="form-control w-full">
 			<label class="label" for="username">
-				<span class="label-text">Username</span>
+				<span class="label-text text-white">Username</span>
 			</label>
 			<input
 				type="text"
 				name="username"
 				placeholder="johndoe"
-				class="input input-bordered w-full"
+				class="input input-bordered w-full  text-white bg-black border-4 border-pink-500"
 			/>
 			{#if 'username' in formErrors}
 				<label class="label" for="username">
@@ -93,13 +93,13 @@
 
 		<div class="form-control w-full">
 			<label class="label" for="email">
-				<span class="label-text">Email</span>
+				<span class="label-text text-white">Email</span>
 			</label>
 			<input
 				type="email"
 				name="email"
 				placeholder="john@example.com"
-				class="input input-bordered w-full"
+				class="input input-bordered w-full  text-white bg-black border-4 border-pink-500"
 				required
 			/>
 			{#if 'email' in formErrors}
@@ -111,13 +111,13 @@
 
 		<div class="form-control w-full">
 			<label class="label" for="password">
-				<span class="label-text">Password</span>
+				<span class="label-text text-white">Password</span>
 			</label>
 			<input
 				type="password"
 				name="password"
 				placeholder=""
-				class="input input-bordered w-full"
+				class="input input-bordered w-full  text-white bg-black border-4 border-pink-500"
 				required
 			/>
 			{#if 'password' in formErrors}
@@ -129,13 +129,13 @@
 
 		<div class="form-control w-full">
 			<label class="label" for="password">
-				<span class="label-text">Confirm Password</span>
+				<span class="label-text text-white">Confirm Password</span>
 			</label>
 			<input
 				type="password"
 				name="password-confirmation"
 				placeholder=""
-				class="input input-bordered w-full"
+				class="input input-bordered w-full  text-white bg-black border-4 border-pink-500"
 				required
 			/>
 			{#if 'password' in formErrors}
@@ -146,7 +146,7 @@
 		</div>
 
 		<div class="form-control w-full mt-4">
-			<button class="btn btn-md text-gray-700 hover:bg-gray-700 hover:shadow hover:shadow-gray-700 hover:text-yellow-100">Create an Account</button>
+			<button class="btn btn-md text-white border-4 border-pink-500 bg-black hover:bg-gray-700 hover:shadow hover:shadow-gray-700 hover:text-yellow-100">Create an Account</button>
 		</div>
 	</form>
 </div>

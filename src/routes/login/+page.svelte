@@ -67,7 +67,7 @@
 		<form on:submit={handleSubmit} class="w-1/3">
 			<div class="login-control w-full">
 				<label class="label" for="username">
-					<span class="label-text text-white">Username</span>
+					<span class="label-text text-gray-200">Username</span>
 				</label>
 				<input
 					type="text"
@@ -84,7 +84,7 @@
 		
 			<div class="login-control w-full">
 				<label class="label" for="password">
-					<span class="label-text text-white">Password</span>
+					<span class="label-text text-gray-200">Password</span>
 				</label>
 				<input
 					type="password"
