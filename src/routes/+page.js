@@ -109,16 +109,14 @@ export async function load({ fetch }) {
 // did trust us banner
 // made sure cursor starts top - left
 // did neon glowing login button
+// neon login button
 
 //STYLE TO-DO
-// change website theme to black - done
 // do this animation intersect scroll - https://www.youtube.com/watch?v=T33NN_pPeNI&ab_channel=BeyondFireship
-// do neon button - see neon component - done
 // do blob - https://www.youtube.com/watch?v=4ALLynsZ0u0&list=PL4-IK0AVhVjMI45H5E9oE47wj-7AZLNnK&index=34&ab_channel=KevinPowell
 // do button ripple effect - https://www.youtube.com/watch?v=ueyRcYEmsrI&ab_channel=OnlineTutorials
 // do slider
 // do navbar like this - https://www.youtube.com/watch?v=EXzotQV4tDM&ab_channel=El_ShadowAcademy
 // do darkmode - https://www.youtube.com/watch?v=oMOe_32M6ss&ab_channel=JohnKomarnicki
-// do colour change theme
 
 // FUNCTIONALITY TO-DO

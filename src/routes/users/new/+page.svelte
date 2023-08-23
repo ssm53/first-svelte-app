@@ -3,6 +3,7 @@
 	import { goto } from '$app/navigation';
 	import { authenticateUser } from './../../../utils/auth.js';
 	import { loggedIn } from '../../../store/store.js';
+	import { signUpAlert } from '../../../utils/alert.js';
 	let formErrors = {};
 
 
@@ -15,6 +16,7 @@
 			return true;
 		});
 		goto('/jobs/new');
+		signUpAlert();
 	}
 
 	// async function test() {

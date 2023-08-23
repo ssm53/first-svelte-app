@@ -6,13 +6,14 @@
   import { getTokenFromLocalStorage } from '../../../../utils/auth.js';
   import { loading } from '../../../../store/store.js';
   import Spinner from '../../../../spinner/spinner.svelte';
+	import { showEditAlert } from '../../../../utils/alert.js';
 
   let formErrors = {}
-  let showAlert = false;
+  // let showAlert = false;
 
-  function closeAlert3() {
-    showAlert = false;
-  }
+  // function closeAlert3() {
+  //   showAlert = false;
+  // }
 
   export function postUpdateJob() {
     goto(`/jobs/${data.job.id}`)
@@ -68,7 +69,8 @@
     })
     const res = await resp.json();
     formErrors = res.data;
-    showAlert = true;
+    showEditAlert();
+    // showAlert = true;
 
   }
 }
@@ -79,18 +81,7 @@
 <div class=" bg-black h-fit">
   <Spinner />
 
-{#if showAlert}
-  <!-- Show alert if showAlert is true -->
-  <div class="fixed inset-0 flex items-center justify-center">
-    <div class="bg-red-100 border border-red-400 text-red-700 px-6 py-4 rounded relative" role="alert">
-      <strong class="font-bold text-lg mb-2 block">Wrong details!</strong>
-      <span class="text-sm block">Please double check it again.</span>
-      <span class="absolute top-0 right-0 p-4">
-        <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" on:click={closeAlert3}><title>Close</title><path d="M14.348 5.652a.5.5 0 0 0-.707 0L10 9.293 6.354 5.646a.5.5 0 1 0-.708.708L9.293 10l-3.647 3.646a.5.5 0 0 0 .708.708L10 10.707l3.646 3.646a.5.5 0 0 0 .708-.708L10.707 10l3.647-3.646a.5.5 0 0 0 0-.706z"/></svg>
-      </span>
-    </div>
-  </div>
-{/if}
+   
 
 <div class="flex justify-center items-center py-5">
   <form on:submit={updateJob} class=" w-5/6">
