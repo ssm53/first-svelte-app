@@ -115,8 +115,6 @@
     });
 		let filterBox = document.querySelector(".filter-box");
 		filterBox.classList.add("hidden")
-
-
 	}
 
 	
